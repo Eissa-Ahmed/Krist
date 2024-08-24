@@ -1,0 +1,45 @@
+@import "../../../../variables.scss";
+header {
+  nav {
+    ul {
+      li {
+        a {
+          font-size: 16px;
+          font-weight: 500;
+          color: $primary-color-black-300;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            color: $primary-color-black;
+          }
+        }
+      }
+    }
+  }
+
+  .left-header {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .right-header {
+    ul {
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .active {
+    color: $primary-color-black !important;
+  }
+}
+
+.menu {
+  position: absolute;
+  right: 15%;
+  left: 15%;
+  z-index: 1;
+  top: 100%;
+}

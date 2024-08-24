@@ -1,0 +1,67 @@
+<div
+  class="vh-100 d-flex flex-column align-items-center justify-content-center"
+>
+  <div class="d-md-none d-block w-75 mb-5">
+    <ng-lottie [options]="option"></ng-lottie>
+  </div>
+
+  <p class="m-0 welcome d-none d-md-block">Welcome 👋</p>
+  <p class="m-0 please d-none d-md-block">Please login here</p>
+
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class=""
+    style="width: 70%"
+  >
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="email"
+      />
+      <div
+        *ngIf="
+          getControl('email')?.touched &&
+          getControl('email')?.invalid &&
+          getControl('password')?.touched
+        "
+      >
+        @if(getControl('email')?.errors?.['email']) {
+        <small class="text-danger">Email is not valid</small>
+        }
+      </div>
+    </div>
+    <div class="form-group my-2">
+      <label for="password">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="password"
+      />
+    </div>
+    <div class="m-0 p-0 d-flex justify-content-between align-items-center">
+      <div
+        class="form-group my-2 d-flex justify-content-start align-items-center gap-2"
+      >
+        <input type="checkbox" id="rememberMe" name="rememberMe" />
+        <label class="remember" for="rememberMe">Remember Me</label>
+      </div>
+
+      <p
+        class="forget m-0 p-0"
+        [routerLink]="['/authentication/forget-password']"
+      >
+        Forgot Password?
+      </p>
+    </div>
+    <button [disabled]="loginForm.invalid" type="submit" class="btn w-100 mt-4">
+      @if(isLoading()) {
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      } @else{ Login }
+    </button>
+  </form>
+</div>

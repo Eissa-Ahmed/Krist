@@ -1,0 +1,11 @@
+.parent {
+  background-color: #eeedeb;
+
+  div {
+    &:first-of-type {
+      .text-uppercase {
+        font-size: 22px;
+      }
+    }
+  }
+}

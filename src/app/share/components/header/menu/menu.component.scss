@@ -1,0 +1,18 @@
+.row {
+  background-color: white;
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
+  > div:not(:last-child) {
+    border-right: 1px solid rgb(224, 224, 224);
+    padding-right: 25px;
+  }
+  b {
+    display: block;
+    margin-bottom: 8px;
+  }
+  ul {
+    margin-bottom: 12px;
+    li {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+<footer class="py-md-5 py-2">
+  <div class="container-md">
+    <div class="row m-0 p-0">
+      <div class="col-12 col-sm-6 col-md-4">
+        <img class="mb-3" src="./assets/svg/logo-text-white.svg" alt="Logo" />
+        <div class="d-flex gap-2 align-items-center p-0 my-2">
+          <img src="./assets/svg/phone.svg" width="20px" alt="Logo" />
+          <p class="m-0 p-0">(+20) {{ applicationSettings?.PhoneNumber }}</p>
+        </div>
+        <div class="d-flex gap-2 align-items-center p-0 my-2">
+          <img src="./assets/svg/email.svg" width="20px" alt="Logo" />
+          <p class="m-0 p-0">{{ applicationSettings?.Email }}</p>
+        </div>
+        <div class="d-flex gap-2 align-items-center p-0 my-2">
+          <img src="./assets/svg/location.svg" width="20px" alt="Logo" />
+          <p class="m-0 p-0">{{ applicationSettings?.Address }}</p>
+        </div>
+      </div>
+
+      <div
+        class="col-12 col-sm-6 col-md-4 my-4 my-sm-0 d-flex justify-content-between justify-content-sm-center gap-3"
+      >
+        <ul>
+          <b>Information</b>
+          <li><a [routerLink]="['account']">My Account</a></li>
+          <li><a [routerLink]="['/authentication/login']">Login</a></li>
+          <li><a [routerLink]="['cart']">My Cart</a></li>
+          <li><a [routerLink]="['wishlist']">My Wishlist</a></li>
+          <li><a [routerLink]="['checkout']">Checkout</a></li>
+        </ul>
+        <ul>
+          <b>Service</b>
+          <li><a [routerLink]="['contact']">Contact Us</a></li>
+          <li><a [routerLink]="['careers']">Careers</a></li>
+          <li>
+            <a [routerLink]="['delivery-information']">Delivery Information</a>
+          </li>
+          <li><a [routerLink]="['privacy-policy']">Privacy Policy</a></li>
+          <li><a [routerLink]="['terms-conditions']">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <b>Subscribe</b>
+        <p style="font-size: 14px" class="my-4 p-0">
+          Enter your email below to be the first to know about new collections
+          and product launches
+        </p>
+        <div class="email-group mb-3 d-flex">
+          <img
+            class="input-group-prepend"
+            src="./assets/svg/email.svg"
+            alt="Arrow-right"
+          />
+          <input
+            type="text"
+            class="flex-fill"
+            placeholder="Your Email"
+            email
+            [(ngModel)]="email"
+          />
+          @if(isLoading()) {
+          <i class="fa-solid fa-spinner fa-spin"></i>
+          } @else{
+          <img
+            *ngIf="isEmailValid()"
+            (click)="onSubscribe()"
+            src="./assets/svg/arrow-right.svg"
+            alt="Arrow-right"
+          />
+          }
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row m-0 p-0">
+      <div class="col-md-4 col-12 text-md-start text-center">
+        <img src="./assets/svg/visa.svg" alt="Visa" />
+        <img class="mx-3" src="./assets/svg/mastercard.svg" alt="MasterCard" />
+        <img src="./assets/svg/paypal.svg" alt="Paypal" />
+      </div>
+      <div class="col-md-4 col-12 text-center mt-3 mt-md-0">
+        <p>© 2024 Krist All rights reserved</p>
+      </div>
+      <div class="social col-md-4 col-12 text-md-end text-center">
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.Facebook"
+          class="mx-1"
+          src="./assets/svg/facebook.svg"
+          width="13px"
+          alt="Facebook"
+        />
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.Tiktok"
+          class="mx-1"
+          src="./assets/svg/TikTok.svg"
+          width="16px"
+          alt="TikTok"
+        />
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.Youtube"
+          class="mx-1"
+          src="./assets/svg/YouTube.svg"
+          width="20px"
+          alt="YouTube"
+        />
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.LinkedIn"
+          class="mx-1"
+          src="./assets/svg/LinkedIn.svg"
+          width="17px"
+          alt="LinkedIn"
+        />
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.Instagram"
+          class="mx-1"
+          src="./assets/svg/instagram.svg"
+          width="17px"
+          alt="Instagram"
+        />
+        <img
+          *ngIf="applicationSettings?.SocialMediaAccounts?.X"
+          class="mx-1"
+          src="./assets/svg/x.svg"
+          width="17px"
+          alt="X"
+        />
+      </div>
+    </div>
+  </div>
+</footer>

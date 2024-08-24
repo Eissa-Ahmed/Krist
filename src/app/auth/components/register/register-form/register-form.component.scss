@@ -1,0 +1,94 @@
+@import "../../../../../variables.scss";
+.details,
+.create {
+  text-align: start;
+  width: 70%;
+  margin: 0 auto;
+}
+.create {
+  font-size: 30px;
+  font-weight: bold;
+}
+.details {
+  color: $color-grey;
+  margin-bottom: 30px !important;
+}
+
+label {
+  font-size: 12px;
+}
+
+.remember,
+.forget {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button,
+#password,
+#email,
+#firstName,
+#lastName,
+#confirmPassword {
+  height: 50px;
+}
+
+#terms {
+  cursor: pointer;
+  font-weight: bold;
+}
+button {
+  background-color: $primary-color-black;
+  color: white;
+  &:hover {
+    transition: all 0.3s;
+    background-color: $primary-color-black-200;
+    color: white;
+  }
+  &:focus {
+    transition: all 0.3s;
+    background-color: $primary-color-black;
+    color: white;
+  }
+  &:active {
+    transition: all 0.3s;
+    background-color: $primary-color-black;
+    color: white;
+  }
+  &:disabled {
+    transition: all 0.3s;
+    background-color: $primary-color-black-200;
+    color: white;
+  }
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+input {
+  border: 1px solid $primary-color-black;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  &:focus {
+    border: 1px solid $primary-color-black;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 567px) {
+  .create {
+    font-size: 25px;
+  }
+  button,
+  #password,
+  #email,
+  #firstName,
+  #lastName,
+  #confirmPassword {
+    height: 40px;
+  }
+}

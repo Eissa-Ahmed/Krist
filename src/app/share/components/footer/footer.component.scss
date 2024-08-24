@@ -1,0 +1,44 @@
+@import "../../../../variables.scss";
+footer {
+  background-color: $primary-color-black;
+  color: white;
+  .social {
+    img {
+      cursor: pointer;
+    }
+  }
+  ul {
+    li {
+      margin: 10px 0;
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .email-group {
+    width: 100%;
+    border: 1px solid white;
+    padding: 12px 8px;
+    border-radius: 7px;
+    input {
+      margin: 0 10px;
+      border: none !important;
+      outline: none;
+      background-color: transparent;
+      border-bottom: 1px solid white;
+      color: white;
+      &::placeholder {
+        color: white;
+      }
+    }
+    img {
+      &:last-child {
+        cursor: pointer;
+        &:hover {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

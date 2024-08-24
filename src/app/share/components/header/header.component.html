@@ -1,0 +1,63 @@
+<header class="container-lg p-3 position-relative">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="left-header" style="width: 75px">
+      <img
+        [routerLink]="['/home']"
+        src="./assets/Images/logo_text.png"
+        alt="logo"
+        width="100%"
+      />
+    </div>
+    <nav>
+      <ul class="d-flex justify-content-center align-items-center gap-4">
+        <li>
+          <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li (click)="openMenu()">
+          <a class="d-flex align-items-center gap-1" routerLinkActive="active">
+            Shop
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/out-story']" routerLinkActive="active"
+            >Our Story</a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+        </li>
+        <li>
+          <a [routerLink]="['/contact']" routerLinkActive="active"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div
+      class="right-header d-flex justify-content-center align-items-center gap-4"
+    >
+      <ul class="d-flex justify-content-center align-items-center gap-2">
+        <img src="./assets/svg/search.svg" alt="Search" />
+        <img src="./assets/svg/favorite.svg" alt="Search" />
+        <img src="./assets/svg/cart.svg" alt="Search" />
+      </ul>
+
+      <div *ngIf="!isAuthenticated()" class="d-flex gap-1">
+        <button [routerLink]="['/authentication/login']" class="btn btn-dark">
+          Login
+        </button>
+        <button
+          [routerLink]="['/authentication/register']"
+          class="btn btn-outline-dark"
+        >
+          SignUp
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="menu" class="menu" [ngClass]="{ 'd-none': !menuIsOpen() }">
+    <app-menu></app-menu>
+  </div>
+</header>
